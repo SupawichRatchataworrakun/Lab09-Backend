@@ -48,6 +48,6 @@ public class EventController {
         Event output = eventService.save(event);
         return ResponseEntity.ok(LabMapper.INSTANCE.getEventDto(output));
 
-
+ 
     }
 }
