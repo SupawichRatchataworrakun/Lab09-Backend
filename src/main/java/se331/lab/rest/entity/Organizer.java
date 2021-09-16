@@ -1,12 +1,9 @@
 package se331.lab.rest.entity;
 
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -23,5 +20,7 @@ public class Organizer {
     Long id;
     String name;
     @OneToMany(mappedBy = "organizer")
-    List<Event> ownEvents;
+
+    @Builder.Default
+    List<Event> ownEvents = new ArrayList<>();
 }
