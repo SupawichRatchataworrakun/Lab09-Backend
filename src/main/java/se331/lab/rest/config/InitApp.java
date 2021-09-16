@@ -13,7 +13,6 @@ import se331.lab.rest.repository.EventRepository;
 import se331.lab.rest.repository.OrganizerRepository;
 import se331.lab.rest.repository.ParticipantRepository;
 
-import javax.transaction.Transactional;
 
 @Component
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
