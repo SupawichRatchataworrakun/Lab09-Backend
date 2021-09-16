@@ -46,8 +46,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("8.00am-4.00 pm.")
                 .petAllowed(false)
                 .build());
-        tempEvent.setOrganizer(org2);
-        org2.getOwnEvents().add(tempEvent);
+        tempEvent.setOrganizer(org1);
+        org1.getOwnEvents().add(tempEvent);
         tempEvent = eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Loy Krathong")
@@ -57,7 +57,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .time("8.00-10.00 pm.")
                 .petAllowed(false)
                 .build());
-        eventRepository.save(Event.builder()
+        tempEvent.setOrganizer(org2);
+        org2.getOwnEvents().add(tempEvent);
+        tempEvent = eventRepository.save(Event.builder()
                 .category("Cultural")
                 .title("Songkran")
                 .description("Let's Play Water")
