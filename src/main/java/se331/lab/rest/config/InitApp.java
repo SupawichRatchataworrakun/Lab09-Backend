@@ -13,6 +13,8 @@ import se331.lab.rest.repository.EventRepository;
 import se331.lab.rest.repository.OrganizerRepository;
 import se331.lab.rest.repository.ParticipantRepository;
 
+import javax.transaction.Transactional;
+
 @Component
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Autowired
@@ -29,7 +31,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
             org1 = organizerRepository.save(Organizer.builder()
                     .name("CAMT").build());
             org2 = organizerRepository.save(Organizer.builder()
-                .name("CMU").build());
+                .name("CMU").build());  
             org3 = organizerRepository.save(Organizer.builder()
                 .name("ChiangMai").build());
             par1 = participantRepository.save(Participant.builder().name("Test").telNo("0805874615").build());
